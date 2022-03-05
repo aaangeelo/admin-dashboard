@@ -7,6 +7,7 @@
   --beau-blue: #bfd2d9;
   --blue-ncs: #3b89ac;
   --platinum: #e7e5e4;
+  --gray: #555351;
 }
 
 * {
@@ -234,8 +235,10 @@ body {
 .main-content {
   background-color: var(--platinum);
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2.7fr 1fr;
   padding: 15px 30px;
+  padding-bottom: 30px;
+  gap: 30px;
 }
 
 .container-left {
@@ -245,7 +248,7 @@ body {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 350px));
+  grid-template-columns: repeat(auto-fit, 320px);
   grid-auto-rows: 215px;
   justify-content: center;
   gap: 30px;
@@ -268,17 +271,18 @@ body {
 .card__title {
   font-size: 1.1rem;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .card__description {
   font-size: 0.98rem;
   flex: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
   min-width: 0;
+  color: var(--gray);
 }
 
 .card__icons {
@@ -290,4 +294,73 @@ body {
 .card__icon {
   margin-right: 20px;
   cursor: pointer;
+  color: var(--prussian-blue-lighter);
+}
+
+.container-right__block-announcements {
+  margin-bottom: 30px;
+}
+
+.announcements,
+.trending {
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.announcement__block {
+  border-bottom: var(--prussian-blue-lighter) solid 2px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.announcement__block:last-child {
+  border: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.announcement__title {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.announcement__description {
+  font-size: 0.98rem;
+  max-height: 115px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  min-height: 0;
+  color: var(--gray);
+}
+
+.trending {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user__photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.user__username {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.user__name {
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 0.95rem;
 }
