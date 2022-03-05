@@ -26,9 +26,8 @@ a {
 
 body {
   display: grid;
-  grid: 1fr 3fr/ 1fr 4fr;
+  grid-template-columns: 1fr 4fr;
   font-family: "Roboto", Helvetica, sans-serif;
-  min-height: 100vh;
 }
 
 .header,
@@ -39,6 +38,7 @@ body {
 .header {
   grid-column: 2;
   padding-bottom: 30px;
+  background-color: white;
 }
 
 .header__section {
@@ -116,6 +116,7 @@ body {
 }
 
 .header__section-bottom {
+  margin-bottom: 0;
 }
 
 .profile-large {
@@ -169,7 +170,7 @@ body {
 }
 
 .sidebar__container {
-  position: fixed;
+  /* position: fixed; */
   width: 240px;
 }
 
@@ -232,4 +233,61 @@ body {
 
 .main-content {
   background-color: var(--platinum);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 15px 30px;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 350px));
+  grid-auto-rows: 215px;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 15px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-left: solid var(--prussian-blue-lighter) 11px;
+}
+
+.container__title {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.card__title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.card__description {
+  font-size: 0.98rem;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  min-width: 0;
+}
+
+.card__icons {
+  margin-top: 15px;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.card__icon {
+  margin-right: 20px;
+  cursor: pointer;
 }
